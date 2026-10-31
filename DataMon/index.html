@@ -117,6 +117,7 @@
   .trio figcaption strong { display: block; font: 700 1.45rem/1.1 var(--pixel); margin-bottom: 6px; }
 
   /* Online: the device's dark screen */
+  #play .screen { margin: 84px 0; scroll-margin-top: 24px; }
   .screen {
     background: var(--screen); color: #dfe8da; border-radius: 28px;
     padding: clamp(28px, 5vw, 56px);
@@ -187,8 +188,8 @@
     <a class="brand" href="#"><img src="site/icon.png" alt=""><span>DataMon</span></a>
     <nav class="links" aria-label="Sections">
       <a href="#play">The game</a>
-      <a href="#dataperks">DataPerks</a>
       <a href="#online">Online</a>
+      <a href="#dataperks">DataPerks</a>
       <a href="#yours">Make it yours</a>
     </nav>
   </div>
@@ -240,7 +241,24 @@
             <p>Fight through ten Adventure areas, battle your own Pets against each other, or take them online. Every battle plays out at 60 fps, and the winning blow lands with a knockout blast.</p>
           </div>
         </article>
+      </div>
 
+      <div class="screen" id="online">
+        <h2>Online</h2>
+        <p class="intro">Connect to the DataMon Public Server, or battle friends on the same Wi-Fi. iPhones and Android phones play together.</p>
+        <div class="pair">
+          <div class="phone"><img src="site/shots/bosses.jpg" alt="World Bosses: Shiva the World Boss and the Cave Troll Mini Boss, each with a Fight button" loading="lazy" width="507" height="1100"></div>
+          <div class="phone"><img src="site/shots/tourney.jpg" alt="Tournaments: the daily and weekly Champion with the jackpot and a Challenge button" loading="lazy" width="507" height="1100"></div>
+        </div>
+        <div class="modes">
+          <div><h3>World Boss</h3><p>A new legendary boss every week. Everyone fights the same one, and everyone who helps bring it down is rewarded.</p></div>
+          <div><h3>Mini Bosses</h3><p>Smaller bosses that keep coming. Land the Final Blow for the <span class="gold">biggest share of Shekel</span>.</p></div>
+          <div><h3>Tournaments</h3><p>Daily and weekly. Beat the Champion to take the spot, and hold it until the Tournament ends to win the jackpot.</p></div>
+          <div><h3>PVP rooms</h3><p>Open a room, or join one. Put Shekel on the line in a wager battle if you're feeling brave.</p></div>
+        </div>
+      </div>
+
+      <div class="rows">
         <article class="row">
           <div class="phone"><img src="site/shots/farm.jpg" alt="The Farm: buildings, a pond and Pets walking around" loading="lazy" width="507" height="1100"></div>
           <div>
@@ -360,25 +378,6 @@
           <li class="perk battle"><span class="ms" aria-hidden="true">favorite</span><div><b>Big Heart</b> <i>battle</i><span>Holds 5 Effort Hearts instead of 4</span></div></li>
           <li class="perk battle"><span class="ms" aria-hidden="true">landscape</span><div><b>Unshaken</b> <i>battle</i><span>No hit chance penalty for being injured</span></div></li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="online">
-    <div class="wrap">
-      <div class="screen">
-        <h2>Online</h2>
-        <p class="intro">Connect to the DataMon Public Server, or battle friends on the same Wi-Fi. iPhones and Android phones play together.</p>
-        <div class="pair">
-          <div class="phone"><img src="site/shots/bosses.jpg" alt="World Bosses: Shiva the World Boss and the Cave Troll Mini Boss, each with a Fight button" loading="lazy" width="507" height="1100"></div>
-          <div class="phone"><img src="site/shots/tourney.jpg" alt="Tournaments: the daily and weekly Champion with the jackpot and a Challenge button" loading="lazy" width="507" height="1100"></div>
-        </div>
-        <div class="modes">
-          <div><h3>World Boss</h3><p>A new legendary boss every week. Everyone fights the same one, and everyone who helps bring it down is rewarded.</p></div>
-          <div><h3>Mini Bosses</h3><p>Smaller bosses that keep coming. Land the Final Blow for the <span class="gold">biggest share of Shekel</span>.</p></div>
-          <div><h3>Tournaments</h3><p>Daily and weekly. Beat the Champion to take the spot, and hold it until the Tournament ends to win the jackpot.</p></div>
-          <div><h3>PVP rooms</h3><p>Open a room, or join one. Put Shekel on the line in a wager battle if you're feeling brave.</p></div>
         </div>
       </div>
     </div>
