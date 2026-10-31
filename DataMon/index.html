@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataMon</title>
+<meta name="description" content="DataMon is a virtual pet game for iPhone and Android. Hatch a Datatama, raise your Pet through seven stages and battle on the DataMon Public Server.">
+<meta property="og:title" content="DataMon">
+<meta property="og:description" content="Hatch, raise and evolve your own DataMon. Virtual pet game for iPhone and Android.">
+<meta property="og:image" content="https://tinustk.github.io/DataMon/site/trailer-poster.jpg">
+<link rel="icon" href="site/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* The page is the DataV's LCD: pale green glass, dark pixel ink. The game's own colours. */
+  :root {
+    --lcd: #c9d6b4;
+    --lcd-deep: #b3c39b;
+    --ink: #17201a;
+    --ink-soft: #3d4a40;
+    --screen: #1a211f;      /* the app's dark shell */
+    --mint: #5cd99e;        /* the app's accent */
+    --gold: #f2b71f;        /* Celestial Shekel */
+    --shell: #5a3ea6;       /* the DataV device */
+    --shell-hi: #7458c9;
+    --radius-phone: 34px;
+    --pixel: "Pixelify Sans", ui-monospace, monospace;
+    --text: "Figtree", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background-color: var(--lcd);
+    /* LCD pixel grid */
+    background-image:
+      linear-gradient(rgba(23,32,26,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(23,32,26,.045) 1px, transparent 1px);
+    background-size: 6px 6px;
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+  img, video { display: block; max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--shell); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+  /* Header */
+  header.top { padding: 18px 0; }
+  header.top .wrap { display: flex; align-items: center; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  .brand span { font: 700 1.5rem/1 var(--pixel); }
+  nav.links { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap; }
+  nav.links a { text-decoration: none; font-weight: 500; color: var(--ink-soft); }
+  nav.links a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+  /* Hero */
+  .hero { padding: 32px 0 72px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+  h1, h2, h3 { font-family: var(--pixel); font-weight: 700; line-height: 1.05; margin: 0; }
+  h1 { font-size: clamp(3rem, 7.5vw, 5.75rem); letter-spacing: -.01em; }
+  .hero p.lede { font-size: 1.25rem; max-width: 34ch; margin: 22px 0 30px; color: var(--ink-soft); }
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+  .button {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border-radius: 14px;
+    background: var(--shell); color: #fff; text-decoration: none;
+    font: 700 1.05rem/1 var(--text);
+    box-shadow: 0 4px 0 #3c2873;
+    transition: transform .08s, box-shadow .08s, background .15s;
+  }
+  .button:hover { background: var(--shell-hi); }
+  .button:active { transform: translateY(3px); box-shadow: 0 1px 0 #3c2873; }
+  .cta .note { color: var(--ink-soft); font-size: .95rem; max-width: 30ch; }
+  .walker {
+    width: 75px; height: 75px; margin-top: 34px;
+    background: url(site/player-walk.png) 0 0 / 300px 75px no-repeat;
+    image-rendering: pixelated;
+    animation: walk .8s steps(4) infinite;
+  }
+  @keyframes walk { to { background-position: -300px 0; } }
+  @media (prefers-reduced-motion: reduce) { .walker { animation: none; } }
+
+  /* Phones */
+  .phone {
+    background: #0c100e; padding: 10px; border-radius: var(--radius-phone);
+    box-shadow: 0 30px 60px -20px rgba(23,32,26,.55), inset 0 0 0 2px #2b332e;
+  }
+  .phone > img, .phone > video { border-radius: calc(var(--radius-phone) - 10px); width: 100%; height: auto; }
+  .hero .phone { width: min(330px, 100%); justify-self: center; transform: rotate(2.5deg); }
+
+  /* Sections */
+  section { padding: 72px 0; }
+  h2 { font-size: clamp(2.1rem, 4.5vw, 3.2rem); margin-bottom: 14px; }
+  .intro { max-width: 60ch; color: var(--ink-soft); margin: 0 0 40px; }
+
+  .rows { display: grid; gap: 84px; }
+  .row { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: center; }
+  .row:nth-child(even) { grid-template-columns: 1fr 300px; }
+  .row:nth-child(even) .phone { order: 2; }
+  .row h3 { font-size: 2rem; margin-bottom: 12px; }
+  .row p { max-width: 46ch; margin: 0 0 12px; }
+  .row ul { margin: 0; padding-left: 1.1em; max-width: 46ch; }
+  .row li { margin: 4px 0; }
+
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 84px; }
+  .trio figure { margin: 0; }
+  .trio figcaption { margin-top: 18px; }
+  .trio figcaption strong { display: block; font: 700 1.45rem/1.1 var(--pixel); margin-bottom: 6px; }
+
+  /* Online: the device's dark screen */
+  .screen {
+    background: var(--screen); color: #dfe8da; border-radius: 28px;
+    padding: clamp(28px, 5vw, 56px);
+    box-shadow: inset 0 0 0 3px #2a332e;
+  }
+  .screen h2 { color: var(--mint); }
+  .screen .intro { color: #aebdaa; }
+  .modes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px 48px; max-width: 860px; }
+  @media (max-width: 640px) { .modes { grid-template-columns: 1fr; } }
+  .modes h3 { font-size: 1.4rem; color: #fff; margin-bottom: 6px; }
+  .modes p { margin: 0; color: #c3cfbf; font-size: 1rem; }
+  .modes .gold { color: var(--gold); }
+
+  .yours { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 56px; }
+  .yours p { margin: 0; max-width: 48ch; }
+
+  /* Two phones side by side (the logs, the bosses and Tournaments) */
+  .row.wide { grid-template-columns: 560px 1fr; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .pair .phone:last-child { transform: translateY(36px); }
+  .screen .pair { max-width: 620px; margin: 8px auto 64px; }
+
+  footer { padding: 48px 0 64px; border-top: 2px solid var(--lcd-deep); color: var(--ink-soft); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; }
+  footer .brand span { font-size: 1.2rem; color: var(--ink); }
+
+  @media (max-width: 860px) {
+    .hero .wrap, .row, .row:nth-child(even), .yours { grid-template-columns: 1fr; gap: 32px; }
+    .row:nth-child(even) .phone { order: 0; }
+    .row.wide { grid-template-columns: 1fr; }
+    .pair { gap: 14px; }
+    .pair .phone:last-child { transform: none; }
+    .row .phone, .hero .phone { width: min(300px, 100%); justify-self: center; }
+    .trio { grid-template-columns: 1fr; }
+    .trio .phone { width: min(300px, 100%); margin-inline: auto; }
+    nav.links { display: none; }
+    section { padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="site/icon.png" alt=""><span>DataMon</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#play">The game</a>
+      <a href="#online">Online</a>
+      <a href="#yours">Make it yours</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Raise a DataMon.</h1>
+        <p class="lede">A virtual pet game for iPhone and Android. Hatch a Datatama, care for it through seven stages, and let your care, training and battles decide what it becomes.</p>
+        <div class="cta">
+          <a class="button" href="https://testflight.apple.com/join/q5ZdaXX2">Join the iPhone beta</a>
+          <span class="note">Android is in closed testing on Google Play, with a public release coming.</span>
+        </div>
+        <div class="walker" role="img" aria-label="A DataPlayer walking"></div>
+      </div>
+      <div class="phone">
+        <video src="site/trailer.mp4" poster="site/trailer-poster.jpg" autoplay muted loop playsinline
+               aria-label="DataMon trailer: raising a Pet, a battle, the Farm, the Shekel and Farm Logs, World and Mini Bosses and Tournaments"></video>
+      </div>
+    </div>
+  </div>
+
+  <section id="play">
+    <div class="wrap">
+      <h2>The game</h2>
+      <p class="intro">Ten DataMon lines, each with its own evolutions, hidden routes and secret dragon forms, drawn in HD with idle and attack animations.</p>
+
+      <div class="rows">
+        <article class="row">
+          <div class="phone"><img src="site/shots/pet.jpg" alt="A DataV with two Pets in a sunlit arena and the care buttons below" loading="lazy" width="507" height="1100"></div>
+          <div>
+            <h3>Care decides everything</h3>
+            <p>Two DataVs, each with its own Pet. Feed it, train it, clean up after it and put it to bed. What you do, and what you skip, shapes the route it evolves down.</p>
+            <ul>
+              <li>Food and strength hearts, effort, sickness and injuries</li>
+              <li>Training mini games that build Power</li>
+              <li>Evo Crystals, Holy Ray and other items from the Shop</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="row">
+          <div class="phone"><img src="site/shots/battle.jpg" alt="A battle between two Pets with hearts above them" loading="lazy" width="507" height="1100"></div>
+          <div>
+            <h3>Battle your way up</h3>
+            <p>Fight through ten Adventure areas, battle your own Pets against each other, or take them online. Every battle plays out at 60 fps, and the winning blow lands with a knockout blast.</p>
+          </div>
+        </article>
+
+        <article class="row">
+          <div class="phone"><img src="site/shots/farm.jpg" alt="The Farm: buildings, a pond and Pets walking around" loading="lazy" width="507" height="1100"></div>
+          <div>
+            <h3>Retire them to the Farm</h3>
+            <p>On the Farm your Pets live, train and sometimes fight each other. One becomes the Alpha. The treasure chest fills with Celestial Shekel while you're away, even with the app closed.</p>
+            <p>Petting a sad Pet cheers it up and earns you 10 Shekel.</p>
+          </div>
+        </article>
+
+        <article class="row wide">
+          <div class="pair">
+            <div class="phone"><img src="site/shots/shekel.jpg" alt="The Celestial Shekel Log: Total Earned, Total Loss and Earned minus Loss, then today's lines" loading="lazy" width="507" height="1100"></div>
+            <div class="phone"><img src="site/shots/farmlog.jpg" alt="The Farm Log: the Farm Pets with the Alpha first, then today's moods and fights" loading="lazy" width="507" height="1100"></div>
+          </div>
+          <div>
+            <h3>Every Shekel counted</h3>
+            <p>The Celestial Shekel Log keeps Total Earned, Total Loss and what's left pinned at the top. Each day lists where your Shekel came from, and where they went: the Shop, clock speeds, lost wagers.</p>
+            <p>The Farm Log shows what happened while you were away: moods, Farm Fights and who's the Alpha now.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="trio">
+        <figure>
+          <div class="phone"><img src="site/shots/lands-grid.jpg" alt="The DataDex: a grid of Pet forms, some still hidden" loading="lazy" width="507" height="1100"></div>
+          <figcaption><strong>Fill in the DataDex</strong>Register Pets to fill in 80 forms. Every form gives a bonus for good, and a finished line pays out a buff.</figcaption>
+        </figure>
+        <figure>
+          <div class="phone"><img src="site/shots/guides.jpg" alt="Guides: a Pet line listed stage by stage" loading="lazy" width="507" height="1100"></div>
+          <figcaption><strong>Every route in Guides</strong>Each Pet, evolution route, World Boss and game rule, in one place.</figcaption>
+        </figure>
+        <figure>
+          <div class="phone"><img src="site/shots/player.jpg" alt="The DataPlayer screen with level, bonuses and looks" loading="lazy" width="507" height="1100"></div>
+          <figcaption><strong>Grow your DataPlayer</strong>Everything you do earns EXP. Each level adds a Farm place, and you pick your look.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="online">
+    <div class="wrap">
+      <div class="screen">
+        <h2>Online</h2>
+        <p class="intro">Connect to the DataMon Public Server, or battle friends on the same Wi-Fi. iPhones and Android phones play together.</p>
+        <div class="pair">
+          <div class="phone"><img src="site/shots/bosses.jpg" alt="World Bosses: Shiva the World Boss and the Cave Troll Mini Boss, each with a Fight button" loading="lazy" width="507" height="1100"></div>
+          <div class="phone"><img src="site/shots/tourney.jpg" alt="Tournaments: the daily and weekly Champion with the jackpot and a Challenge button" loading="lazy" width="507" height="1100"></div>
+        </div>
+        <div class="modes">
+          <div><h3>World Boss</h3><p>A new legendary boss every week. Everyone fights the same one, and everyone who helps bring it down is rewarded.</p></div>
+          <div><h3>Mini Bosses</h3><p>Smaller bosses that keep coming. Land the Final Blow for the <span class="gold">biggest share of Shekel</span>.</p></div>
+          <div><h3>Tournaments</h3><p>Daily and weekly. Beat the Champion to take the spot, and hold it until the Tournament ends to win the jackpot.</p></div>
+          <div><h3>PVP rooms</h3><p>Open a room, or join one. Put Shekel on the line in a wager battle if you're feeling brave.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="yours">
+    <div class="wrap">
+      <h2>Make it yours</h2>
+      <p class="intro">DataMon is made to be shared.</p>
+      <div class="yours">
+        <p><strong>Your own Pets.</strong> Add Pets from pictures or GIFs, plus DataPlayers, wallpapers, food and Farm buildings. They live, evolve and battle like any other.</p>
+        <p><strong>Share packages.</strong> Export your creations as a content package from Content, send the .zip to a friend, and they import it from Content › Import.</p>
+        <p><strong>Widget and backup.</strong> A home-screen widget shows your Pets, and your game backs up to iCloud.</p>
+        <p><strong>Steps to Vital Values.</strong> Optional, read-only Health access turns your steps into care for your Pet.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="site/icon.png" alt=""><span>DataMon</span></a>
+    <a href="privacy-policy.html">Privacy policy</a>
+    <a href="mailto:t.k.business@outlook.com">t.k.business@outlook.com</a>
+    <span>© 2026 DataMon. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
