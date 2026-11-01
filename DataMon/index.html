@@ -113,6 +113,19 @@
 
   .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 84px; }
   .trio figure { margin: 0; }
+  .trio.duo { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-left: auto; margin-right: auto; }
+  .dp-title { font: 700 1.6rem/1.1 var(--pixel); margin: 84px 0 6px; }
+  .dp-intro { margin: 0 0 22px; }
+  .dp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 14px; }
+  .dp { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 150px; border-radius: 18px; background: rgba(23,32,26,.08); }
+  .dp .sprite { width: 96px; height: 96px; background: 0 0 / 384px 96px no-repeat; image-rendering: pixelated; animation: dpwalk .8s steps(4) infinite; }
+  @keyframes dpwalk { to { background-position: -384px 0; } }
+  .dp.own { border: 3px dashed currentColor; background: transparent; color: inherit; text-decoration: none; text-align: center; padding: 10px; }
+  .dp.own .plus { font: 700 2.6rem/1 var(--pixel); }
+  .dp.own b { font: 700 1.1rem/1.1 var(--pixel); margin-top: 6px; }
+  .dp.own small { opacity: .7; margin-top: 4px; }
+  .dp.own:hover { background: rgba(23,32,26,.06); }
+  @media (prefers-reduced-motion: reduce) { .dp .sprite { animation: none; } }
   .trio figcaption { margin-top: 18px; }
   .trio figcaption strong { display: block; font: 700 1.45rem/1.1 var(--pixel); margin-bottom: 6px; }
 
@@ -190,6 +203,7 @@
       <a href="#play">The game</a>
       <a href="#online">Online</a>
       <a href="#dataperks">DataPerks</a>
+      <a href="#datadex">DataDex</a>
       <a href="#yours">Make it yours</a>
     </nav>
   </div>
@@ -281,11 +295,7 @@
         </article>
       </div>
 
-      <div class="trio">
-        <figure>
-          <div class="phone"><img src="site/shots/lands-grid.jpg" alt="The DataDex: a grid of Pet forms, some still hidden" loading="lazy" width="507" height="1100"></div>
-          <figcaption><strong>Fill in the DataDex</strong>Register Pets to fill in 80 forms. Every form gives a bonus for good, and a finished line pays out a buff.</figcaption>
-        </figure>
+      <div class="trio duo">
         <figure>
           <div class="phone"><img src="site/shots/guides.jpg" alt="Guides: a Pet line listed stage by stage" loading="lazy" width="507" height="1100"></div>
           <figcaption><strong>Every route in Guides</strong>Each Pet, evolution route, World Boss and game rule, in one place.</figcaption>
@@ -379,6 +389,40 @@
           <li class="perk battle"><span class="ms" aria-hidden="true">landscape</span><div><b>Unshaken</b> <i>battle</i><span>No hit chance penalty for being injured</span></div></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="datadex">
+    <div class="wrap">
+      <h2>DataDex</h2>
+      <p class="intro">Register your Pets in the DataDex and they leave for good. In return, every form you fill in makes you stronger.</p>
+
+      <div class="rows">
+        <article class="row wide">
+          <div class="pair">
+            <div class="phone"><img src="site/shots/lands.jpg" alt="Farm Lands: the DataDex card with its bonuses, then Pets you can register" loading="lazy" width="507" height="1100"></div>
+            <div class="phone"><img src="site/shots/lands-grid.jpg" alt="The DataDex: a grid of Pet forms, some still hidden" loading="lazy" width="507" height="1100"></div>
+          </div>
+          <div>
+            <h3>Fill in 80 forms</h3>
+            <p>Farm Lands opens at DataPlayer level 25. Register a living Pet from a DataV or the Farm, and its form shows up in the DataDex.</p>
+            <p>Every form gives one bonus for good: Power, more Shekel earned, more DataPlayer EXP or a faster Farm chest. Higher stages give more.</p>
+            <p>Finish a whole line for 5,000 Shekel, 1,000 DataPlayer EXP and that line's own buff, from a better hit chance to cheaper Shop items.</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="dp-title">Every DataPlayer</h3>
+      <p class="dp-intro">Pick the DataPlayer who walks around with your Pets.</p>
+      <div class="dp-grid">
+        <div class="dp"><span class="sprite" style="background-image:url(site/players/male.png)"></span></div>
+        <div class="dp"><span class="sprite" style="background-image:url(site/players/female.png)"></span></div>
+        <div class="dp"><span class="sprite" style="background-image:url(site/players/male2.png)"></span></div>
+        <div class="dp"><span class="sprite" style="background-image:url(site/players/female2.png)"></span></div>
+        <div class="dp"><span class="sprite" style="background-image:url(site/players/1.png)"></span></div>
+        <div class="dp"><span class="sprite" style="background-image:url(site/players/2.png)"></span></div>
+        <a class="dp own" href="#yours"><span class="plus">+</span><b>Bring your OWN!</b><small>Add your own from a picture</small></a>
       </div>
     </div>
   </section>
