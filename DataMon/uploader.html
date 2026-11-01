@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataMon Uploader</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1b1f24; --muted: #5b6470; --accent: #1f9e6e; --line: #e3e7ec; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111417; --fg: #e8ecef; --muted: #9aa4ae; --accent: #4fd6a0; --line: #2a3036; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 32px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .date { color: var(--muted); margin: 0 0 24px; }
+  a { color: var(--accent); }
+  ul, ol { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .summary { background: color-mix(in srgb, var(--accent) 10%, transparent); border-radius: 12px; padding: 12px 16px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 16px 0 0; padding: 12px 0; border-top: 1px solid var(--line); }
+  .yt { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+  .yt svg { width: 22px; height: 16px; }
+  code { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<h1>DataMon Uploader</h1>
+<p class="date">Uses YouTube API Services · Made by Tinus Christian Creeper</p>
+
+<div class="summary">
+<p>DataMon Uploader is a small private command-line tool that uploads the official trailers and Shorts for the
+game <a href="./">DataMon</a> to the DataMon channel on
+<span class="yt"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#FF0000"/><path d="M11 5.5v9l8-4.5z" fill="#fff"/></svg>YouTube</span>.
+It is used only by the channel's owner on their own computer. It is not sold, offered to the public or used with
+anyone else's account.</p>
+</div>
+
+<h2>What it does</h2>
+<ul>
+  <li>Uploads a video file from the owner's computer to the owner's own channel, with a title, description, tags,
+    category and privacy setting (<code>videos.insert</code>).</li>
+  <li>Optionally sets a custom thumbnail on that video (<code>thumbnails.set</code>).</li>
+  <li>Shows which channel it is signed in to and lists that channel's latest uploads, so the owner can check them
+    (<code>channels.list</code>, <code>playlistItems.list</code>, <code>videos.list</code>).</li>
+</ul>
+<p>It does not read, store or analyse other channels, comments, viewers or analytics, and it shows no YouTube content
+to anyone else.</p>
+
+<h2>How it signs in</h2>
+<p>The owner signs in once with Google (OAuth 2.0) in their browser and picks the DataMon channel. Google gives the
+tool a token that is saved only on the owner's computer. The owner can remove the tool's access at any time on
+<a href="https://security.google.com/settings/security/permissions">Google's security settings page</a>.</p>
+
+<p class="links">
+  <a href="uploader-privacy.html">Privacy Policy</a>
+  <a href="uploader-terms.html">Terms of Service</a>
+  <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a>
+  <a href="mailto:t.k.business@outlook.com">Contact</a>
+</p>
+</main>
+</body>
+</html>

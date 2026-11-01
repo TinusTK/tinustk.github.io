@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataMon Uploader Privacy Policy</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1b1f24; --muted: #5b6470; --accent: #1f9e6e; --line: #e3e7ec; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111417; --fg: #e8ecef; --muted: #9aa4ae; --accent: #4fd6a0; --line: #2a3036; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 32px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .date { color: var(--muted); margin: 0 0 24px; }
+  a { color: var(--accent); }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .summary { background: color-mix(in srgb, var(--accent) 10%, transparent); border-radius: 12px; padding: 12px 16px; }
+</style>
+</head>
+<body>
+<main>
+<h1>DataMon Uploader Privacy Policy</h1>
+<p class="date">Effective 1 November 2026</p>
+
+<p>DataMon Uploader ("the tool") is a private command-line tool made by Tinus Christian Creeper ("we", "us") that
+uploads videos for the game DataMon to the DataMon channel. It is described on the
+<a href="uploader.html">DataMon Uploader page</a>. This policy explains what the tool does with information.</p>
+
+<div class="summary">
+<p><strong>In short:</strong> the tool runs only on the channel owner's own computer and talks only to Google.
+It has no server, sends nothing to us or anyone else, and keeps no data about anyone except the owner's own
+sign-in token on that computer.</p>
+</div>
+
+<h2>1. YouTube API Services</h2>
+<p>The tool uses <strong>YouTube API Services</strong> to upload videos and read the owner's own channel and uploads.
+By using the tool you agree to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>, and
+Google's handling of your information is covered by the
+<a href="https://policies.google.com/privacy">Google Privacy Policy</a>
+(<a href="http://www.google.com/policies/privacy">http://www.google.com/policies/privacy</a>).</p>
+
+<h2>2. Information the tool uses</h2>
+<ul>
+  <li><strong>Google sign-in token (OAuth 2.0):</strong> after the owner signs in with Google, the token is saved in a
+    file on the owner's computer so they don't have to sign in for every upload. It is never sent anywhere except to
+    Google to make API requests.</li>
+  <li><strong>Channel name and ID:</strong> read from YouTube to show the owner which channel uploads go to.</li>
+  <li><strong>The owner's videos and their details</strong> (file, title, description, tags, privacy, thumbnail):
+    sent to YouTube when the owner uploads, and the latest uploads' titles, links and privacy are read back to show
+    them to the owner.</li>
+</ul>
+<p>The tool does not collect information about viewers, other channels, comments or analytics. It uses no cookies,
+no analytics and no advertising.</p>
+
+<h2>3. How information is stored and shared</h2>
+<ul>
+  <li>Everything stays on the owner's computer; the tool has no database or server of its own.</li>
+  <li>We do not sell, share or transfer any information obtained through YouTube API Services to anyone.</li>
+  <li>Channel and video details read from YouTube are shown on screen and not stored.</li>
+</ul>
+
+<h2>4. Removing access and deleting data</h2>
+<ul>
+  <li>Revoke the tool's access to your Google account at any time on
+    <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>.</li>
+  <li>Delete the saved sign-in by deleting the tool's <code>token.json</code> file; nothing else is kept.</li>
+  <li>Videos uploaded with the tool live on YouTube and can be changed or deleted in YouTube Studio.</li>
+  <li>If you have any question about data and the tool, contact us and we'll answer or delete it within 7 days.</li>
+</ul>
+
+<h2>5. Changes to this policy</h2>
+<p>If this policy changes, we'll update it on this page and change the date at the top.</p>
+
+<h2>6. Contact</h2>
+<p><a href="mailto:t.k.business@outlook.com">t.k.business@outlook.com</a></p>
+</main>
+</body>
+</html>
