@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TinusTK Apps</title>
-<meta name="description" content="Apps by Tinus Christian Creeper. Home of DataMon, a virtual pet game for iPhone and Android.">
+<title>TinusTK</title>
+<meta name="description" content="Games for iPhone and Android, and bioinformatics tools for Galaxy. Home of DataMon, CDIP and ShigaPass typing.">
 <link rel="icon" href="DataMon/site/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,6 +79,27 @@
   .shots img:nth-child(2) { left: 27%; top: 0; z-index: 2; }
   .shots img:nth-child(3) { right: 2%; top: 40px; transform: rotate(7deg); }
 
+  .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tool {
+    background: #f1f5ea; border: 2px solid var(--ink); border-radius: 22px; padding: 26px;
+    box-shadow: 0 6px 0 var(--ink); display: flex; flex-direction: column;
+  }
+  .tool-head { display: flex; align-items: center; gap: 14px; }
+  .tool-head svg { flex: none; width: 52px; height: 52px; }
+  .tool h3 { font: 700 1.9rem/1 var(--pixel); margin: 0; }
+  .tool .sub { font-size: .95rem; color: var(--ink-soft); margin-top: 4px; }
+  .tool .sub i { font-style: italic; }
+  .tool ul { margin: 16px 0 20px; padding-left: 20px; color: var(--ink-soft); }
+  .tool li { margin: 4px 0; }
+  .tool .buttons { margin-top: auto; }
+  .button.dark { background: var(--ink); color: #f1f5ea; box-shadow: 0 4px 0 #000; }
+  .button.dark:hover { background: #26332a; }
+  .button.dark:active { box-shadow: 0 1px 0 #000; }
+  .button.line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+  .button.line:hover { background: rgba(23,32,26,.06); }
+  .button.line:active { transform: translateY(1px); }
+  .note { font-size: .9rem; color: var(--ink-soft); margin: 14px 0 0; }
+
   footer { padding: 56px 0 48px; color: var(--ink-soft); font-size: .95rem; }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
   footer a { color: var(--ink); }
@@ -88,6 +109,7 @@
     .app { grid-template-columns: 1fr; padding: 26px 20px; border-radius: 24px; }
     .shots { height: 360px; order: -1; }
     .intro { padding: 48px 0 28px; }
+    .tools { grid-template-columns: 1fr; }
   }
   @media (max-width: 420px) {
     .shots { height: 290px; }
@@ -106,8 +128,8 @@
 
 <main class="wrap">
   <section class="intro">
-    <h1>Games made with care.</h1>
-    <p>Hi, I'm Tinus Christian Creeper. I make games for iPhone and Android. Here's what I've made so far.</p>
+    <h1>Games and tools, made with care.</h1>
+    <p>Games for iPhone and Android, and bioinformatics tools for public health genomics in Galaxy.</p>
   </section>
 
   <p class="label">My apps</p>
@@ -134,11 +156,55 @@
       <img src="DataMon/site/shots/battle.jpg" alt="" loading="lazy">
     </div>
   </section>
+
+  <p class="label" style="margin-top:48px">Bioinformatics tools</p>
+  <section class="tools">
+    <article class="tool">
+      <div class="tool-head">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" rx="14" fill="#17201a"/><path d="M17 9c0 12 18 12 18 24s-18 7-18 10M35 9c0 12-18 12-18 24s18 7 18 10" fill="none" stroke="#5cd99e" stroke-width="3" stroke-linecap="round"/><path d="M19.5 15h13M18 21h16M18 31h16M19.5 37h13" stroke="#f2b71f" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <div>
+          <h3>CDIP</h3>
+          <div class="sub"><i>Corynebacterium diphtheriae</i> typing</div>
+        </div>
+      </div>
+      <ul>
+        <li><i>tox</i> gene detection and <i>tox</i> allele assignment</li>
+        <li>7-gene MLST sequence type</li>
+        <li>Identity, coverage and database version on every row</li>
+        <li>One tabular report per run, against the BIGSdb-Pasteur database</li>
+      </ul>
+      <div class="buttons">
+        <a class="button dark" href="https://github.com/TinusTK/corynebacterium-diphtheriae-typing">GitHub</a>
+        <a class="button line" href="https://toolshed.g2.bx.psu.edu/view/tinustk/cdiphtheriae_typing">Galaxy Tool Shed</a>
+      </div>
+    </article>
+    <article class="tool">
+      <div class="tool-head">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" rx="14" fill="#17201a"/><path d="M17 9c0 12 18 12 18 24s-18 7-18 10M35 9c0 12-18 12-18 24s18 7 18 10" fill="none" stroke="#5cd99e" stroke-width="3" stroke-linecap="round"/><path d="M19.5 15h13M18 21h16M18 31h16M19.5 37h13" stroke="#f2b71f" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <div>
+          <h3>ShigaPass</h3>
+          <div class="sub"><i>Shigella</i> typing suite</div>
+        </div>
+      </div>
+      <ul>
+        <li>Species and serotype (<i>Shigella</i> or EIEC) from assemblies</li>
+        <li><i>S. sonnei</i> and <i>S. flexneri</i> genotypes from reads (Mykrobe)</li>
+        <li>Ciprofloxacin-resistance (QRDR) mutations in <i>gyrA</i> / <i>parC</i></li>
+        <li>One combined report with cross-check warnings</li>
+      </ul>
+      <div class="buttons">
+        <a class="button dark" href="https://github.com/TinusTK/shigella-typing">GitHub</a>
+        <a class="button line" href="https://toolshed.g2.bx.psu.edu/view/tinustk/shigella_typing">Galaxy Tool Shed</a>
+      </div>
+    </article>
+  </section>
+  <p class="note">Built for Galaxy Australia, and they run on the command line too. ShigaPass typing is redesigned from
+    <a href="https://github.com/imanyass/ShigaPass">ShigaPass</a> and <a href="https://github.com/Mykrobe-tools/mykrobe">Mykrobe</a>.</p>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Tinus Christian Creeper</span>
+    <span>© 2026 TinusTK</span>
     <nav>
       <a href="DataMon/privacy-policy.html">DataMon Privacy Policy</a>
       <a href="DataMon/terms-of-service.html">DataMon Terms of Service</a>
