@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TinusTK</title>
-<meta name="description" content="Games for iPhone and Android, bioinformatics tools and discord bots it's an endless curiosity to building, designing and developing.">
+<meta name="description" content="Games for iPhone and Android, bioinformatics tools and Discord bots. An endless curiosity for building, designing and developing.">
 <link rel="icon" href="DataMon/site/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +35,13 @@
   header { padding: 28px 0 0; }
   header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .brand { font: 700 1.5rem/1 var(--pixel); letter-spacing: .01em; color: var(--ink); text-decoration: none; }
-  header a.mail { font-weight: 500; color: var(--ink-soft); text-decoration: none; }
-  header a.mail:hover { color: var(--ink); text-decoration: underline; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  .top-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 22px; }
+  .top-links a { font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+  .top-links a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+  .top-links a.mail { color: var(--ink); font-weight: 700; }
+  .label { scroll-margin-top: 20px; }
 
   .intro { padding: 72px 0 40px; }
   h1, h2 { font-family: var(--pixel); font-weight: 700; line-height: 1.05; margin: 0; }
@@ -108,6 +113,8 @@
   footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 
   @media (max-width: 820px) {
+    header .wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .top-links { justify-content: flex-start; gap: 6px 18px; }
     .app { grid-template-columns: 1fr; padding: 26px 20px; border-radius: 24px; }
     .shots { height: 360px; order: -1; }
     .intro { padding: 48px 0 28px; }
@@ -124,14 +131,19 @@
 <header>
   <div class="wrap">
     <a class="brand" href="./">TinusTK</a>
-    <a class="mail" href="mailto:t.k.business@outlook.com">Contact</a>
+    <nav class="top-links">
+      <a href="#bioinformatics">Bioinformatics tools</a>
+      <a href="#discord-bots">Discord bots</a>
+      <a href="#guides">Guides</a>
+      <a class="mail" href="mailto:t.k.business@outlook.com">Contact</a>
+    </nav>
   </div>
 </header>
 
 <main class="wrap">
   <section class="intro">
     <h1>Games and tools, made with care.</h1>
-    <p>Games for iPhone and Android, bioinformatics tools for public health genomics in Galaxy, and Discord bots for gamers.</p>
+    <p>Games for iPhone and Android, bioinformatics tools and Discord bots. An endless curiosity for building, designing and developing.</p>
   </section>
 
   <h2 class="label">My apps</h2>
@@ -159,7 +171,7 @@
     </div>
   </section>
 
-  <h2 class="label" style="margin-top:72px">Bioinformatics tools</h2>
+  <h2 class="label" id="bioinformatics" style="margin-top:72px">Bioinformatics tools</h2>
   <section class="tools">
     <article class="tool">
       <div class="tool-head">
@@ -228,7 +240,7 @@
     <a href="https://github.com/imanyass/ShigaPass">ShigaPass</a>, <a href="https://github.com/Mykrobe-tools/mykrobe">Mykrobe</a> and
     <a href="https://github.com/ShigellaGenomics/mykrobeshig">mykrobeshig</a>.</p>
 
-  <h2 class="label" style="margin-top:72px">Discord bots</h2>
+  <h2 class="label" id="discord-bots" style="margin-top:72px">Discord bots</h2>
   <section class="tools">
     <article class="tool">
       <div class="tool-head">
@@ -270,7 +282,7 @@
     </article>
   </section>
 
-  <h2 class="label" style="margin-top:72px">Guides</h2>
+  <h2 class="label" id="guides" style="margin-top:72px">Guides</h2>
   <section class="tools">
     <article class="tool wide">
       <div class="tool-head">
