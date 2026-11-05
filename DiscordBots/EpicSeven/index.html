@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EpicSeven Clock Bot</title>
+<meta name="description" content="A free Discord bot for Epic Seven: live daily and weekly reset countdowns, Guild War phases with automatic role pings, countdown timers and custom pings.">
+<meta property="og:title" content="EpicSeven Clock Bot">
+<meta property="og:description" content="Free Discord bot: Epic Seven resets, Guild War phases and pings, live every 5 seconds.">
+<meta property="og:image" content="https://tinustk.github.io/DiscordBots/site/epicseven-embed.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏰</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site/bots.css">
+<style> :root { --accent: #5cd99e; } </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../">TinusTK</a>
+    <nav class="links">
+      <a href="#features">Features</a>
+      <a href="#setup">Setup</a>
+      <a href="#commands">Commands</a>
+      <a href="#guild-war">Guild War</a>
+      <a href="../MapleStoryM/">MapleStory M bot</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="kicker">Discord bot <span class="badge">APP</span></div>
+        <h1>EpicSeven Clock Bot</h1>
+        <p class="lede">Never miss an Epic Seven reset. One live message in your server counts down to the daily reset,
+          the weekly reset and the next Guild War phase, and pings your role when it matters.</p>
+        <div class="cta">
+          <a class="button" href="https://discord.com/oauth2/authorize?client_id=1490310472220672000&amp;permissions=406679792656&amp;integration_type=0&amp;scope=bot">Add to Discord</a>
+          <a class="button line" href="#setup">How to set it up</a>
+        </div>
+        <p class="free"><b>Free on every server.</b> Every feature and command, no premium.</p>
+      </div>
+      <div class="embed">
+        <img src="../site/epicseven-embed.jpg" width="598" height="655"
+             alt="The EpicSeven Clock embed in Discord: server time, daily reset, weekly reset, Guild War phase and countdown timers, with the channel name showing compact times.">
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>What it does</h2>
+      <p class="intro">Everything updates live every 5 seconds, so the countdowns are always right.</p>
+      <ul class="features">
+        <li><span class="em" aria-hidden="true">🕒</span><b>Live embed</b><span>Server time, Daily Reset, Weekly Reset and the Guild War phase with its countdown.</span></li>
+        <li><span class="em" aria-hidden="true">#️⃣</span><b>Channel name timers</b><span>The category name updates every 10 minutes with compact reset times.</span></li>
+        <li><span class="em" aria-hidden="true">⚔️</span><b>Guild War pings</b><span>Automatic role pings when war starts, at 12 hours left and at 2 hours left.</span></li>
+        <li><span class="em" aria-hidden="true">⏳</span><b>Countdown timers</b><span>As many named timers as you like, each with its own ping when it runs out.</span></li>
+        <li><span class="em" aria-hidden="true">🗓️</span><b>Custom pings</b><span>Daily or weekly scheduled role pings with your own message.</span></li>
+        <li><span class="em" aria-hidden="true">♻️</span><b>Auto-repost</b><span>If the embed gets deleted, the bot posts it again.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="setup">
+    <div class="wrap">
+      <div class="screen">
+        <h2>Set up in four steps</h2>
+        <p class="intro">Add the bot, then run <code>/setup</code>. You need the <b>Manage Server</b> permission.</p>
+        <ol class="steps">
+          <li><b>Region</b><span>Pick your server's Epic Seven region. For Europe you'll also give a UTC offset.</span></li>
+          <li><b>Category</b><span>Pick the category the bot will rename with live timer info.</span></li>
+          <li><b>Embed channel</b><span>Pick the text channel where the live embed is posted.</span></li>
+          <li><b>Role</b><span>Pick the role the bot pings for all notifications.</span></li>
+        </ol>
+        <p class="after">After you confirm, the bot posts the live embed and starts tracking straight away.</p>
+        <p class="after">Running <code>/setup</code> again on a server that's already set up shows a warning first, because it resets all data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="commands">
+    <div class="wrap">
+      <h2>Commands</h2>
+      <p class="intro">All commands are free.</p>
+      <div class="tables">
+        <div>
+          <h3 class="t">General</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/setup</code></td><td>Run the 4-step setup (needs Manage Server)</td></tr>
+            <tr><td><code>/daily</code></td><td>Show the next Daily Reset countdown</td></tr>
+            <tr><td><code>/weekly</code></td><td>Show the next Weekly Reset countdown</td></tr>
+            <tr><td><code>/guildwar</code></td><td>Show the current Guild War phase and countdown</td></tr>
+            <tr><td><code>/help</code></td><td>Show all commands</td></tr>
+          </table></div>
+        </div>
+        <div>
+          <h3 class="t">Settings</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/settings look_new</code></td><td>New-style embed (separator lines, lowercase units)</td></tr>
+            <tr><td><code>/settings look_old</code></td><td>Classic embed layout (default)</td></tr>
+            <tr><td><code>/settings dash_on</code></td><td>Dashes in countdown strings</td></tr>
+            <tr><td><code>/settings dash_off</code></td><td>No dashes in countdown strings (default)</td></tr>
+          </table></div>
+        </div>
+        <div>
+          <h3 class="t">Countdown timers</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/countdowntimer create</code></td><td>Make a named timer with a ping when it ends</td></tr>
+            <tr><td><code>/countdowntimer check</code></td><td>List all active timers</td></tr>
+            <tr><td><code>/countdowntimer clear &lt;number&gt;</code></td><td>Remove a timer by number</td></tr>
+            <tr><td><code>/countdowntimer hide</code></td><td>Hide timers from the embed</td></tr>
+            <tr><td><code>/countdowntimer show</code></td><td>Show timers in the embed</td></tr>
+          </table></div>
+          <p class="small">Give it a title (e.g. <i>Moonlight Covenant Event</i>), a duration in days, hours and minutes,
+            and the message to send when it runs out.</p>
+        </div>
+        <div>
+          <h3 class="t">Custom pings</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/customping create</code></td><td>Make a daily or weekly ping</td></tr>
+            <tr><td><code>/customping list</code></td><td>See all pings and their numbers</td></tr>
+            <tr><td><code>/customping delete &lt;number&gt;</code></td><td>Delete a ping by number</td></tr>
+          </table></div>
+          <p class="small">Choose daily or weekly (and the day), a time in UTC (HH:MM), your message, and who to ping:
+            the default role, another role, or one person.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="regions">
+    <div class="wrap">
+      <h2>Regions and reset times</h2>
+      <p class="intro">The weekly reset is every <b>Monday</b>, at the same UTC hour as your region's daily reset.</p>
+      <div class="scroll"><table>
+        <tr><th>Region</th><th>Daily reset (UTC)</th><th>Times shown in</th></tr>
+        <tr><td>🇰🇷 Korea</td><td>18:00</td><td>UTC+9 (KST)</td></tr>
+        <tr><td>🌏 Asia</td><td>18:00</td><td>UTC+8 (CST)</td></tr>
+        <tr><td>🇯🇵 Japan</td><td>18:00</td><td>UTC+9 (JST)</td></tr>
+        <tr><td>🇪🇺 Europe</td><td>03:00, plus your offset</td><td>Your UTC offset</td></tr>
+        <tr><td>🌍 Global</td><td>10:00</td><td>UTC</td></tr>
+      </table></div>
+      <p class="small">The channel name updates every 10 minutes and looks like this:</p>
+      <div class="ticker">🕒18:42 | D 21h 13m | W 21h 13m | GW 14h 13m
+🕒03:01 | 🔥RESET NOW | D 00h 08m | W 1d 00h | GW 01h 58m
+🕒22:15 | 🔥RESET SOON | D 00h 44m | W 3d 22h | GW 05h 22m</div>
+    </div>
+  </section>
+
+  <section id="guild-war">
+    <div class="wrap">
+      <h2>Guild War</h2>
+      <p class="intro">Guild War runs on a fixed UTC schedule in every region. Each war lasts 24 hours from 03:00 UTC.
+        <code>/guildwar</code> and the embed always show the current phase and a countdown to the next one.</p>
+      <div class="tables">
+        <div>
+          <h3 class="t">Weekly schedule</h3>
+          <div class="scroll"><table>
+            <tr><th>Day</th><th>Phase</th></tr>
+            <tr><td>Monday</td><td>⚔️ Battle (starts 03:00 UTC)</td></tr>
+            <tr><td>Tuesday</td><td>📋 Preparation</td></tr>
+            <tr><td>Wednesday</td><td>⚔️ Battle (starts 03:00 UTC)</td></tr>
+            <tr><td>Thursday</td><td>📋 Preparation</td></tr>
+            <tr><td>Friday</td><td>⚔️ Battle (starts 03:00 UTC)</td></tr>
+            <tr><td>Saturday</td><td>🏅 Standby / Rewards</td></tr>
+            <tr><td>Sunday</td><td>📋 Preparation</td></tr>
+          </table></div>
+        </div>
+        <div>
+          <h3 class="t">Automatic pings</h3>
+          <div class="scroll"><table>
+            <tr><th>When (UTC)</th><th>Message</th></tr>
+            <tr><td>Mon, Wed, Fri 03:00</td><td>⚔️ Guild War has started! You have 24 hours.</td></tr>
+            <tr><td>Mon, Wed, Fri 15:00</td><td>⚠️ 12 hours left. Use all your attacks!</td></tr>
+            <tr><td>Tue, Thu, Sat 01:00</td><td>🚨 2 hours left. Last chance to attack!</td></tr>
+          </table></div>
+          <p class="small">Ping messages delete themselves 2 minutes after they're sent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="screen support">
+        <div>
+          <h2>Questions or bugs?</h2>
+          <p>Message <b>tinustk</b> on Discord for help, bug reports or ideas.</p>
+        </div>
+        <a class="button" href="https://discord.com/oauth2/authorize?client_id=1490310472220672000&amp;permissions=406679792656&amp;integration_type=0&amp;scope=bot">Add to Discord</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TinusTK · Not affiliated with Smilegate or Epic Seven.</span>
+    <nav>
+      <a href="../../">Home</a>
+      <a href="../MapleStoryM/">MapleStory M Clock Bot</a>
+      <a href="mailto:t.k.business@outlook.com">t.k.business@outlook.com</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

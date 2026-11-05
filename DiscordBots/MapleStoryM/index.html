@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MapleStory M Clock Bot</title>
+<meta name="description" content="A free Discord bot for MapleStory M: live daily and weekly reset countdowns, Guild Scramble, Pharaoh / Legends / Sharenian Culvert, Path of Proof, boss run timers and custom pings.">
+<meta property="og:title" content="MapleStory M Clock Bot">
+<meta property="og:description" content="Free Discord bot: MapleStory M resets, Guild Scramble, Path of Proof and boss timers, live every 5 seconds.">
+<meta property="og:image" content="https://tinustk.github.io/DiscordBots/site/maplestorym-embed.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site/bots.css">
+<style> :root { --accent: #ffa24a; } </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../">TinusTK</a>
+    <nav class="links">
+      <a href="#features">Features</a>
+      <a href="#setup">Setup</a>
+      <a href="#commands">Commands</a>
+      <a href="#pings">Pings</a>
+      <a href="../EpicSeven/">Epic Seven bot</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="kicker">Discord bot <span class="badge">APP</span></div>
+        <h1>MapleStory M Clock Bot</h1>
+        <p class="lede">Every MapleStory M timer your guild cares about, in one live message: resets, Guild Scramble,
+          Culvert, Path of Proof and your weekly boss run, with role pings before each one.</p>
+        <div class="cta">
+          <a class="button" href="https://discord.com/oauth2/authorize?client_id=1488101431993962637&amp;permissions=397821422608&amp;integration_type=0&amp;scope=bot">Add to Discord</a>
+          <a class="button line" href="#setup">How to set it up</a>
+        </div>
+        <p class="free"><b>Free on every server.</b> Every feature and command, no premium.</p>
+      </div>
+      <div class="embed">
+        <img src="../site/maplestorym-embed.jpg" width="553" height="873"
+             alt="The MapleStory M Reset Tracker embed in Discord: server time, daily reset, weekly boss reset, Culvert, Path of Proof, Guild Scramble and boss run schedule, with the channel name showing compact times.">
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>What it does</h2>
+      <p class="intro">Everything updates live every 5 seconds, so the countdowns are always right.</p>
+      <ul class="features">
+        <li><span class="em" aria-hidden="true">🕒</span><b>Live embed</b><span>Server time (24-hour and 12-hour), Daily Reset and Weekly Boss Reset.</span></li>
+        <li><span class="em" aria-hidden="true">#️⃣</span><b>Channel name timers</b><span>The category name updates every 10 minutes with compact reset times.</span></li>
+        <li><span class="em" aria-hidden="true">⚔️</span><b>Guild Scramble</b><span>A countdown, and role pings when it's starting soon, 5 minutes out and starting now.</span></li>
+        <li><span class="em" aria-hidden="true">🛕</span><b>Culvert</b><span>Pharaoh / Legends / Sharenian Culvert countdown with a ping 1 hour before.</span></li>
+        <li><span class="em" aria-hidden="true">👹</span><b>Path of Proof</b><span>A 28-day timer that resets itself, with a ping 1 hour before it ends.</span></li>
+        <li><span class="em" aria-hidden="true">🕵️</span><b>Weekly boss run</b><span>Your guild's boss run on your own day and time, with your own message.</span></li>
+        <li><span class="em" aria-hidden="true">⏳</span><b>Countdown timers</b><span>As many named timers as you like, each with its own ping when it runs out.</span></li>
+        <li><span class="em" aria-hidden="true">🗓️</span><b>Custom pings</b><span>Daily or weekly scheduled role pings with your own message.</span></li>
+        <li><span class="em" aria-hidden="true">♻️</span><b>Auto-repost</b><span>If the embed gets deleted, the bot posts it again.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="setup">
+    <div class="wrap">
+      <div class="screen">
+        <h2>Set up in four steps</h2>
+        <p class="intro">Add the bot, then run <code>/setup</code>. You need the <b>Manage Server</b> permission.</p>
+        <ol class="steps">
+          <li><b>Region</b><span>Pick your server region: NA or ASIA. For Europe you'll also give a UTC offset.</span></li>
+          <li><b>Category</b><span>Pick the category the bot will rename with live timers.</span></li>
+          <li><b>Embed channel</b><span>Pick the text channel where the live reset embed is posted.</span></li>
+          <li><b>Role</b><span>Pick the role the bot pings for all notifications.</span></li>
+        </ol>
+        <p class="after">After you confirm, the bot posts the live embed and starts tracking straight away.</p>
+        <p class="after">Running <code>/setup</code> again on a server that's already set up shows a warning first, because it resets all data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="commands">
+    <div class="wrap">
+      <h2>Commands</h2>
+      <p class="intro">All commands are free.</p>
+      <div class="tables">
+        <div>
+          <h3 class="t">General</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/setup</code></td><td>Run the 4-step setup (needs Manage Server)</td></tr>
+            <tr><td><code>/help</code></td><td>Show all commands</td></tr>
+          </table></div>
+          <h3 class="t" style="margin-top:28px">Settings</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/settings look_new</code></td><td>New-style embed (separator lines, lowercase units)</td></tr>
+            <tr><td><code>/settings look_old</code></td><td>Classic embed layout (default)</td></tr>
+            <tr><td><code>/settings dash_on</code></td><td>Dashes in countdown strings</td></tr>
+            <tr><td><code>/settings dash_off</code></td><td>No dashes in countdown strings (default)</td></tr>
+          </table></div>
+        </div>
+        <div>
+          <h3 class="t">Boss run and Path of Proof</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/bosstimer create</code></td><td>Set up your weekly boss run</td></tr>
+            <tr><td><code>/bosstimer clear</code></td><td>Remove the boss timer</td></tr>
+            <tr><td><code>/poptimer set</code></td><td>Set the Path of Proof 28-day countdown</td></tr>
+            <tr><td><code>/poptimer clear</code></td><td>Clear the Path of Proof timer</td></tr>
+          </table></div>
+          <p class="small">For the boss run, pick the day of the week, a time (HH:MM in your server's timezone), the ping
+            message (e.g. <i>Boss run starts now! Log in!</i>) and who to ping.</p>
+        </div>
+        <div>
+          <h3 class="t">Countdown timers</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/countdowntimer create</code></td><td>Make a named timer with a ping when it ends</td></tr>
+            <tr><td><code>/countdowntimer check</code></td><td>List all active timers</td></tr>
+            <tr><td><code>/countdowntimer clear &lt;number&gt;</code></td><td>Remove a timer by number</td></tr>
+            <tr><td><code>/countdowntimer hide</code></td><td>Hide timers from the embed</td></tr>
+            <tr><td><code>/countdowntimer show</code></td><td>Show timers in the embed</td></tr>
+          </table></div>
+          <p class="small">Give it a title (e.g. <i>Moonlight Event</i>), a duration in days, hours and minutes, and the
+            message to send when it runs out.</p>
+        </div>
+        <div>
+          <h3 class="t">Custom pings</h3>
+          <div class="scroll"><table>
+            <tr><th>Command</th><th>What it does</th></tr>
+            <tr><td><code>/customping create</code></td><td>Make a daily or weekly ping</td></tr>
+            <tr><td><code>/customping list</code></td><td>See all pings and their numbers</td></tr>
+            <tr><td><code>/customping delete &lt;number&gt;</code></td><td>Delete a ping by number</td></tr>
+          </table></div>
+          <p class="small">Choose daily or weekly (and the day), a time (HH:MM), your message, and who to ping:
+            the default role, another role, or one person.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pings">
+    <div class="wrap">
+      <h2>Automatic pings</h2>
+      <p class="intro">Pings tag the role you chose in <code>/setup</code>, or another role or person if you set one.
+        Ping messages delete themselves 2 minutes after they're sent.</p>
+      <div class="scroll"><table>
+        <tr><th>Event</th><th>When it pings</th></tr>
+        <tr><td>🛕 Pharaoh / Legends / Sharenian Culvert</td><td>1 hour before the weekly reset</td></tr>
+        <tr><td>⚔️ Guild Scramble</td><td>Saturday and Sunday at 7:00 PM (starting soon), 7:05 PM (5 minutes left) and 7:10 PM (starting now)</td></tr>
+        <tr><td>👹 Path of Proof</td><td>1 hour before the timer ends</td></tr>
+        <tr><td>🕵️ Boss run</td><td>At the day and time you set</td></tr>
+        <tr><td>🗓️ Custom pings</td><td>At the daily or weekly time you set</td></tr>
+        <tr><td>⏳ Countdown timers</td><td>When a timer reaches zero</td></tr>
+      </table></div>
+      <p class="small">The channel name updates every 10 minutes and looks like this:</p>
+      <div class="ticker">🕒18:42 | D 21H 49M | W 2D 04H | M 6D 21H
+🕒03:01 | 🔥RESET NOW | D 00H 08M | W 1D 00H</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="screen support">
+        <div>
+          <h2>Questions or bugs?</h2>
+          <p>Message <b>tinustk</b> on Discord for help, bug reports or ideas.</p>
+        </div>
+        <a class="button" href="https://discord.com/oauth2/authorize?client_id=1488101431993962637&amp;permissions=397821422608&amp;integration_type=0&amp;scope=bot">Add to Discord</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TinusTK · Not affiliated with Nexon or MapleStory M.</span>
+    <nav>
+      <a href="../../">Home</a>
+      <a href="../EpicSeven/">EpicSeven Clock Bot</a>
+      <a href="mailto:t.k.business@outlook.com">t.k.business@outlook.com</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
