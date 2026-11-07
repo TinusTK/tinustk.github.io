@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&icon_names=accessibility_new,air,auto_awesome,bedtime,bolt,diamond,directions_run,fast_forward,favorite,flutter_dash,gpp_maybe,graphic_eq,health_and_safety,hourglass_empty,inventory_2,landscape,lightbulb,local_fire_department,looks_two,medical_services,medication,military_tech,monitor_heart,my_location,paid,pets,restaurant,scale,school,shield,shield_with_heart,spa,sports_martial_arts,stars,trending_up,undo,verified_user,visibility,wb_twilight&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&icon_names=accessibility_new,air,auto_awesome,bedtime,bolt,bug_report,celebration,diamond,dinner_dining,directions_run,emoji_events,fast_forward,favorite,flag,flutter_dash,gpp_maybe,graphic_eq,health_and_safety,hourglass_empty,hourglass_top,inventory_2,king_bed,landscape,lightbulb,local_fire_department,local_hospital,looks_two,medical_services,medication,military_tech,monitor_heart,my_location,paid,pets,restaurant,restaurant_menu,savings,scale,school,shield,shield_with_heart,spa,sports_kabaddi,sports_martial_arts,sprint,stars,storefront,swords,trending_up,undo,verified_user,visibility,volunteer_activism,wb_twilight&display=block" rel="stylesheet">
 <style>
   /* The page is the DataV's LCD: pale green glass, dark pixel ink. The game's own colours. */
   :root {
@@ -395,7 +395,7 @@
             <ul>
               <li>Every pick deals a battle card and a life card when it can</li>
               <li>A Pet never gets the same DataPerk twice</li>
-              <li>They work everywhere, online battles too; DataPerks add up to +12% hit chance at most</li>
+              <li>Most work everywhere, online battles too; a few only in one kind of fight (the Bracket Cup, bosses or the Gauntlet). DataPerks add up to +12% hit chance at most</li>
               <li>Once a Pet has lived on the Farm it only earns the Adventure picks</li>
               <li>An Enraged World Boss or Mini Boss carries 2 battle DataPerks of its own</li>
             </ul>
@@ -407,13 +407,15 @@
       <div class="perk-art">
         <figure><img src="site/art/rewrite-floppy.png" alt="A glowing floppy disk" loading="lazy" width="256" height="256"><strong>Rewrite FloppyData</strong>1,000 Shekel in the Shop. Deals 3 new cards for a Pet's Minor Adventure DataPerk; you can keep the old one.</figure>
         <figure><img src="site/art/rewrite-disk.png" alt="A glowing data disk" loading="lazy" width="256" height="256"><strong>Rewrite DiskData</strong>2,000 Shekel. The same for its Major Adventure DataPerk.</figure>
+        <figure><img src="site/art/overwrite-hard.png" alt="A hard drive with glowing red code burning across its platter" loading="lazy" width="256" height="256"><strong>Overwrite HardData</strong>50,000 Shekel. Deals 3 new cards for a Minor DataPerk a Pet got from evolving on its DataV; you pick which one, and can keep the old one.</figure>
+        <figure><img src="site/art/overwrite-solid.png" alt="A gold and black solid-state drive blazing with light" loading="lazy" width="256" height="256"><strong>Overwrite SolidData</strong>100,000 Shekel. The same for a Major DataPerk from evolving.</figure>
         <figure><img src="site/art/force-field.png" alt="A pale blue force field bubble" loading="lazy" width="320" height="320"><strong>Iron Will</strong>When it triggers, a force field throws off the hit that would have won the battle.</figure>
       </div>
 
       <div class="tiers">
         <div>
           <h3>Minor</h3>
-          <p class="where">Stage III, IV and V, and Adventure Area 5. 20 to pick from.</p>
+          <p class="where">Stage III, IV and V, and Adventure Area 5. 28 to pick from.</p>
           <ul class="perks">
           <li class="perk battle"><span class="ms" aria-hidden="true">visibility</span><div><b>Sharp Eye</b> <i>battle</i><span>+2% hit chance</span></div></li>
           <li class="perk battle"><span class="ms" aria-hidden="true">trending_up</span><div><b>Underdog</b> <i>battle</i><span>+3% hit chance against a stronger opponent</span></div></li>
@@ -435,11 +437,19 @@
           <li class="perk battle"><span class="ms" aria-hidden="true">local_fire_department</span><div><b>Grit</b> <i>battle</i><span>0 Effort Hearts costs −5% hit chance instead of −10%</span></div></li>
           <li class="perk life"><span class="ms" aria-hidden="true">wb_twilight</span><div><b>Warm-Up</b> <i>life</i><span>Starts each new form with 1 Effort Heart</span></div></li>
           <li class="perk life"><span class="ms" aria-hidden="true">my_location</span><div><b>Focused</b> <i>life</i><span>The training target moves 20% slower</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">restaurant_menu</span><div><b>Foodie</b> <i>life</i><span>Restaurant dishes last 25% longer on it</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">visibility</span><div><b>Spice Eyes</b> <i>life</i><span>As the Spice Farm worker: pods finish 5% faster, and a refill has a 3% chance to use no Compost</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">bug_report</span><div><b>Dung Beetle</b> <i>life</i><span>20% chance each of its Farm poops puts 2 in the Poop Bin (more Compost)</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">king_bed</span><div><b>Well Tucked</b> <i>life</i><span>Well Rested from Tuck-In lasts 50% longer</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">local_hospital</span><div><b>Brave Patient</b> <i>life</i><span>Hospital rest is 25% shorter</span></div></li>
+          <li class="perk battle"><span class="ms" aria-hidden="true">celebration</span><div><b>Crowd Pleaser</b> <i>battle</i><span>+3% hit chance in Farm Bracket Cup fights</span></div></li>
+          <li class="perk battle"><span class="ms" aria-hidden="true">flag</span><div><b>Raid Ready</b> <i>battle</i><span>+3% hit chance against World Bosses and Mini Bosses</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">savings</span><div><b>Thrifty Chef</b> <i>life</i><span>20% chance a dish it eats costs no Chef Coins</span></div></li>
           </ul>
         </div>
         <div>
           <h3>Major</h3>
-          <p class="where">Stage VI and VI+, and Adventure Area 10. 19 to pick from.</p>
+          <p class="where">Stage VI and VI+, and Adventure Area 10. 27 to pick from.</p>
           <ul class="perks">
           <li class="perk battle"><span class="ms" aria-hidden="true">gpp_maybe</span><div><b>Last Stand</b> <i>battle</i><span>+5% hit chance on its last heart</span></div></li>
           <li class="perk battle"><span class="ms" aria-hidden="true">fast_forward</span><div><b>Opening Strike</b> <i>battle</i><span>+6% hit chance in the first round</span></div></li>
@@ -460,6 +470,14 @@
           <li class="perk battle"><span class="ms" aria-hidden="true">looks_two</span><div><b>Double Effort</b> <i>battle</i><span>A successful training gives 2 Effort Hearts</span></div></li>
           <li class="perk battle"><span class="ms" aria-hidden="true">favorite</span><div><b>Big Heart</b> <i>battle</i><span>Holds 5 Effort Hearts instead of 4</span></div></li>
           <li class="perk battle"><span class="ms" aria-hidden="true">landscape</span><div><b>Unshaken</b> <i>battle</i><span>No hit chance penalty for being injured</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">dinner_dining</span><div><b>Gourmet</b> <i>life</i><span>Power dishes give +50% Power on it</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">hourglass_top</span><div><b>Spice Master</b> <i>life</i><span>As the Spice Farm worker: +2 training Power per Spice (not +1), and every 5th pod run has a 5% chance to make 1 extra Spice</span></div></li>
+          <li class="perk battle"><span class="ms" aria-hidden="true">swords</span><div><b>Titan Slayer</b> <i>battle</i><span>Boss dishes&#x27; extra HP +50%, but boss fights with a Boss dish injure it 80% of the time</span></div></li>
+          <li class="perk battle"><span class="ms" aria-hidden="true">sports_kabaddi</span><div><b>Giant Killer</b> <i>battle</i><span>+6% hit chance against an opponent with 20% or more Power (not online)</span></div></li>
+          <li class="perk battle"><span class="ms" aria-hidden="true">sprint</span><div><b>Gauntlet Runner</b> <i>battle</i><span>+5% hit chance in the Gauntlet</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">emoji_events</span><div><b>Cup Champion</b> <i>life</i><span>Farm Bracket Cup wins pay +50%</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">volunteer_activism</span><div><b>Vital Core</b> <i>life</i><span>Vital Points sent to it give +25% more Vital Values</span></div></li>
+          <li class="perk life"><span class="ms" aria-hidden="true">storefront</span><div><b>Merchant</b> <i>life</i><span>While it lives on the Farm, your Farm Trading sales pay no tax</span></div></li>
           </ul>
         </div>
       </div>
