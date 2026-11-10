@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genomics Workflow Microbials Privacy Policy</title>
+<meta name="description" content="What the Genomics Workflow Microbials desktop app keeps on your computer and what it sends over the internet.">
+<style>
+  :root { --bg: #ffffff; --fg: #1b1f24; --muted: #5b6470; --accent: #1f9e6e; --line: #e3e7ec; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111417; --fg: #e8ecef; --muted: #9aa4ae; --accent: #4fd6a0; --line: #2a3036; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 32px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .date { color: var(--muted); margin: 0 0 24px; }
+  a { color: var(--accent); }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .summary { background: color-mix(in srgb, var(--accent) 10%, transparent); border-radius: 12px; padding: 12px 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+<h1>Genomics Workflow Microbials Privacy Policy</h1>
+<p class="date">Effective 10 November 2026</p>
+
+<p>Genomics Workflow Microbials (GWM) is a free, open-source desktop app for Windows, Mac and Linux that types
+bacterial isolates from sequencing reads. It is made by TinusTK ("we", "us"). This policy explains what the app keeps
+on your computer and what it sends over the internet. The app's source code is public at
+<a href="https://github.com/TinusTK/GenomicsWorkflowMicrobials">github.com/TinusTK/GenomicsWorkflowMicrobials</a>, so
+everything here can be checked.</p>
+
+<div class="summary">
+<p><strong>In short:</strong> GWM has no accounts, no analytics and no advertising. We run no server, and nothing
+about you or your work is sent to us. Your sequencing reads, sample names, results and workflows stay on your
+computer. The app only contacts other websites to download things it needs: its own updates, the tools' containers,
+reference databases and tools you add. Those websites see your IP address, like any download.</p>
+</div>
+
+<h2>1. What stays on your computer</h2>
+<ul>
+  <li><strong>Your data:</strong> sequencing reads, sample names, results, run records, workflows you build, tools you
+    add and reference databases. They are read and written only on your computer, in the folders listed under
+    Settings › Where things are kept.</li>
+  <li><strong>The analysis itself:</strong> every tool runs in a container on your own computer. No reads or results
+    are uploaded anywhere.</li>
+  <li><strong>The app's local service:</strong> the app talks to its own engine through an address that only works on
+    your computer (127.0.0.1). It is not reachable from the network unless you start the engine yourself from the
+    command line with the option that opens it.</li>
+</ul>
+
+<h2>2. What the app downloads, and from where</h2>
+<p>These requests carry no information about you or your samples. Each website sees your IP address and the usual
+technical details of a download (such as the program making the request).</p>
+<table>
+  <tr><th>When</th><th>What</th><th>From</th></tr>
+  <tr><td>Each time the app opens, and when you press Check for updates</td><td>Whether a newer version of the app is
+    out, and what is new in it</td><td>GitHub</td></tr>
+  <tr><td>When you press Update now</td><td>The new version of the app</td><td>GitHub</td></tr>
+  <tr><td>Each time the app opens</td><td>The fonts the app's screens are drawn with</td><td>Google Fonts</td></tr>
+  <tr><td>The first time a tool is used, or when you set a tool up</td><td>The tool's container</td><td>The registry
+    that holds it: usually quay.io (BioContainers) or GitHub's container registry; for a tool you add, the registry
+    in its address</td></tr>
+  <tr><td>When you add a tool from GitHub, or open the Tools page</td><td>The tool's description, its tested set-up
+    when there is one, and whether a newer version exists</td><td>GitHub</td></tr>
+  <tr><td>When you build a container for a tool</td><td>The tool's source code and the packages it needs</td><td>GitHub
+    and the package sources the tool itself names (for example conda or PyPI)</td></tr>
+  <tr><td>When you install a reference database</td><td>The database files</td><td>The database's publisher (for
+    example the Kraken 2 index collection or the CheckM data site)</td></tr>
+</table>
+<p>Each of those services has its own privacy policy. The ones the app always uses are
+<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> and
+<a href="https://developers.google.com/fonts/faq/privacy">Google Fonts</a>.</p>
+
+<h2>3. What the app never does</h2>
+<ul>
+  <li>It does not send your reads, sample names, results, file names or folder names to us or to anyone else.</li>
+  <li>It has no usage tracking, crash reporting, advertising or analytics.</li>
+  <li>It does not ask for, or store, a name, email address or account.</li>
+</ul>
+
+<h2>4. Problem reports and contacting us</h2>
+<p>When a run fails you can save a problem report. It is a text file saved on your computer, and it is only sent if
+you choose to send it yourself. To keep it safe to share, the app leaves sequence data out of it and replaces sample
+names and your user name with placeholders. If you email us or open an issue on GitHub, we receive what you write
+and use it only to answer you and to fix the problem. Issues on GitHub are public.</p>
+
+<h2>5. Changes to your computer</h2>
+<p>The app's tools run in Docker. Setting it up, starting and stopping it, and changing how much memory the tools may
+use, are done from buttons in the app that say what they do. One thing the app does by itself: on Windows, when no
+memory amount is set for the Linux side of Windows (WSL), it sets it to the computer's memory minus 4 GB the first
+time it starts, and shows a message saying so. Closing the app with Quit switches Docker off (on Windows the Linux
+side with it), unless a run is still going. Settings › Remove everything shows what the app keeps on your computer
+and removes what you choose.</p>
+
+<h2>6. Children</h2>
+<p>GWM is a tool for laboratory and research work and is not directed at children.</p>
+
+<h2>7. Changes to this policy</h2>
+<p>If the app starts to use the internet in a new way, this page is updated first and the date at the top changes.
+Earlier versions are kept in the website's public history.</p>
+
+<h2>8. Contact</h2>
+<p>Questions about this policy: <a href="mailto:t.k.business@outlook.com">t.k.business@outlook.com</a>, or open an
+issue at <a href="https://github.com/TinusTK/GenomicsWorkflowMicrobials/issues">the project's GitHub page</a>.</p>
+</main>
+</body>
+</html>
