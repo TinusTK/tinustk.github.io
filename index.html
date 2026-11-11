@@ -220,9 +220,10 @@
         </div>
       </div>
       <p class="about">Give it one or more assembled genomes and it finds the PubMLST scheme that fits best, then reports the
-        sequence type (ST) and the allele of every locus. You do not need to know the species first.</p>
+        sequence type (ST) and the allele of every locus, cross-checked with EnteroBase. You do not need to know the species first.</p>
       <ul>
         <li>162 schemes from PubMLST and BIGSdb-Pasteur</li>
+        <li>Also checks the EnteroBase schemes (<i>Escherichia</i>, <i>Salmonella</i>, <i>Yersinia</i>, <i>Moraxella</i>), which hold newer STs; their ST is shown when PubMLST has none, with a warning saying so</li>
         <li>Python and BLAST+ only; reads FASTA, GenBank and EMBL, plain or compressed</li>
         <li>Same results as mlst on its test genomes and one public genome per scheme</li>
         <li>Tied schemes are listed, not picked at random, and a new MULTICOPY status for loci with several identical copies</li>
