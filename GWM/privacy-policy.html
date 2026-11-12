@@ -25,7 +25,7 @@
 <body>
 <main>
 <h1>Genomics Workflow Microbials Privacy Policy</h1>
-<p class="date">Effective 10 November 2026 · Updated for version 2.0.5: the app no longer loads fonts from Google</p>
+<p class="date">Effective 10 November 2026 · Updated 13 November 2026 for version 2.0.6: checking for newer versions of a tool, and importing a Galaxy workflow</p>
 
 <p>Genomics Workflow Microbials (GWM) is a free, open-source desktop app for Windows, Mac and Linux that types
 bacterial isolates from sequencing reads. It is made by TinusTK ("we", "us"). This policy explains what the app keeps
@@ -65,9 +65,14 @@ technical details of a download (such as the program making the request).</p>
   <tr><td>The first time a tool is used, or when you set a tool up</td><td>The tool's container</td><td>The registry
     that holds it: usually quay.io (BioContainers) or GitHub's container registry; for a tool you add, the registry
     in its address</td></tr>
-  <tr><td>When you add or set up a tool from GitHub, or open the Tools page</td><td>The tool's description, its tested
-    set-up when there is one, its own test files (to check the tool works), and whether a newer version
-    exists</td><td>GitHub</td></tr>
+  <tr><td>When you add or set up a tool from GitHub</td><td>The tool's description and newest release, its tested
+    set-up when there is one, its own test files (to check the tool works), and whether a ready-made container of it
+    exists</td><td>GitHub, and quay.io (BioContainers) for the container</td></tr>
+  <tr><td>When you press Check for newer versions or See other versions on the Tools page</td><td>The list of
+    versions published for a tool's container</td><td>The registry that holds the container: quay.io (BioContainers)
+    or GitHub's container registry (ghcr.io)</td></tr>
+  <tr><td>When you import a Galaxy workflow</td><td>The versions and containers of the tools the workflow
+    names</td><td>The Galaxy Tool Shed (toolshed.g2.bx.psu.edu) and quay.io (BioContainers)</td></tr>
   <tr><td>When you build a container for a tool</td><td>The tool's source code and the packages it needs</td><td>GitHub
     and the package sources the tool itself names (for example conda or PyPI)</td></tr>
   <tr><td>When you install a reference database</td><td>The database files</td><td>The database's publisher (for
