@@ -149,6 +149,26 @@
   .haven-foot a.more:hover { text-decoration: underline; text-underline-offset: 4px; }
   @media (prefers-reduced-motion: reduce) { .dl { transition: none; } .dl:hover { transform: none; } }
 
+  /* DataMon tiles: same cards as Haven, in DataMon's mint */
+  .dm-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .dl.dm { color: #e8efe6; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+    box-shadow: inset 0 0 0 1px rgba(232,239,230,.14); }
+  .dl.dm { padding: 16px 14px 14px; }
+  .dl.dm b { font-size: 1.1rem; white-space: nowrap; }
+  .dl.dm svg { fill: var(--mint); }
+  .dl.dm span { color: #9fb09c; }
+  .dl.dm em { color: var(--mint); }
+  .dl.dm em::after { content: " →"; }
+  .dl.dm:hover, .dl.dm:focus-visible {
+    background: linear-gradient(180deg, rgba(92,217,158,.16), rgba(92,217,158,.04));
+    box-shadow: inset 0 0 0 1px rgba(92,217,158,.6), 0 10px 30px rgba(92,217,158,.16); }
+  .dl.dm.see { background: linear-gradient(180deg, rgba(242,183,31,.2), rgba(242,183,31,.06));
+    box-shadow: inset 0 0 0 1px rgba(242,183,31,.55); }
+  .dl.dm.see svg { fill: var(--gold); }
+  .dl.dm.see em { color: var(--gold); }
+  .dl.dm.see:hover, .dl.dm.see:focus-visible { background: linear-gradient(180deg, rgba(242,183,31,.3), rgba(242,183,31,.1));
+    box-shadow: inset 0 0 0 1px var(--gold), 0 10px 30px rgba(242,183,31,.22); }
+
   .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .tool {
     background: #f1f5ea; border: 2px solid var(--ink); border-radius: 22px; padding: 26px;
@@ -189,6 +209,8 @@
     .halo { display: none; }
     .platforms { grid-template-columns: repeat(2, 1fr); }
     .platforms .dl:last-child { grid-column: 1 / -1; }
+    .dm-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .dm-tiles .see { grid-column: 1 / -1; }
   }
   @media (max-width: 420px) {
     .shots { height: 290px; }
@@ -280,10 +302,21 @@
       </div>
       <p>A virtual pet game. Hatch a Datatama, care for it through seven stages, and let your care, training and battles
         decide what it becomes. Then take it online for World Bosses, Tournaments and battles with other players.</p>
-      <div class="buttons">
-        <a class="button" href="DataMon/">See DataMon</a>
-        <a class="button ghost" href="https://apps.apple.com/au/app/datamon/id6826284462">App Store</a>
-        <a class="button ghost" href="https://discord.gg/P6Rh44SGJG">Android beta</a>
+      <div class="dm-tiles">
+        <a class="dl dm see" href="DataMon/">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.4 6.1 6.6.5-5 4.3 1.6 6.4L12 15.3l-5.6 3.5L8 12.4l-5-4.3 6.6-.5z"/></svg>
+          <b>See DataMon</b><span>Pets, battles<br>and bosses</span><em>Explore</em>
+        </a>
+        <a class="dl dm" href="https://apps.apple.com/au/app/datamon/id6826284462">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 1.5h8A2.5 2.5 0 0 1 18.5 4v16a2.5 2.5 0 0 1-2.5 2.5H8A2.5 2.5 0 0 1 5.5 20V4A2.5 2.5 0 0 1 8 1.5zm0 2a.5.5 0 0 0-.5.5v16c0 .3.2.5.5.5h8c.3 0 .5-.2.5-.5V4a.5.5 0 0 0-.5-.5h-1.6l-.4.8h-3l-.4-.8zm2.5 15h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1z"/></svg>
+          <b>iOS</b><span>iPhone &amp; iPad<br>App Store</span><em>Get it</em>
+        </a>
+        <a class="dl dm" href="https://discord.gg/P6Rh44SGJG">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.5 19.4 6.4a.4.4 0 0 0-.7-.4l-1.8 3.1a11 11 0 0 0-9.8 0L5.3 6a.4.4 0 0 0-.7.4l1.8 3.1A10.2 10.2 0 0 0 1.5 18h21a10.2 10.2 0 0 0-4.9-8.5zM7 15.3a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+          <b>Android</b><span>Beta · join on<br>Discord</span><em>Join beta</em>
+        </a>
+      </div>
+      <div class="buttons dm-legal">
         <a class="button ghost" href="DataMon/privacy-policy.html">Privacy Policy</a>
         <a class="button ghost" href="DataMon/terms-of-service.html">Terms of Service</a>
       </div>
